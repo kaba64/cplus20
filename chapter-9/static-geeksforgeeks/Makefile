@@ -1,7 +1,7 @@
 CC := g++ -std=c++2a -Wall
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := declare-friend.cpp
+SRCS := static-function-object.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
