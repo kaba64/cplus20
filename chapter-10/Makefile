@@ -1,7 +1,7 @@
 CC := g++ -std=c++2a -Wall
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := base-class-initialization.cpp
+SRCS := multiple-inheritance.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
