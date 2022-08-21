@@ -1,7 +1,7 @@
 CC := g++ -std=c++2a -Wall
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := invoke-method.cpp
+SRCS := virtual-destructor.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 

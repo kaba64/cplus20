@@ -2,7 +2,7 @@
 
 class Fish{
 public:
-  void Swim(){std::cout<<"Fish swims!"<<"\n";}
+  virtual void Swim(){std::cout<<"Fish swims!"<<"\n";}
 };
 
 class Tuna:public Fish{
