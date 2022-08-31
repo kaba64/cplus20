@@ -1,7 +1,7 @@
 CC := g++ -std=c++2a -Wall
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := increment.cpp
+SRCS := conversion-operator.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
