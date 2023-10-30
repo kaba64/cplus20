@@ -8,4 +8,5 @@ auto main() -> int
   std::cout<<"type of a = "<<sizeof(a)<<"\n";
   std::cout<<"type of b = "<<sizeof(b)<<"\n";
   std::cout<<"type of c = "<<sizeof(c)<<"\n";
+  //auto d; // It will give error in the compilation time since it has not been initialized
 }
