@@ -1,13 +1,13 @@
-CC := g++ -std=c++2a -Wall
+CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := cplus-string.cpp
+SRCS := c-style-array.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
 $(TARGET_EXEC): $(OBJS)
 	$(CC) $^ -o $@
-cplus-string.o: cplus-string.cpp
+$(OBJS): $(SRCS)
 	$(CC) -c $<
 clean:
 	rm $(OBJS) $(TARGET_EXEC) *~
