@@ -1,7 +1,7 @@
-CC := g++ -std=c++2a -Wall
+CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := inline-function.cpp
+SRCS := pass_by_reference.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 

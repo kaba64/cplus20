@@ -1,6 +1,6 @@
 #include <iostream>
 
-void printv(int a, int n){
+void printv(int a[], int n){
   for(int i=0;i<n;++i){
     std::cout<<"a["<<i<<"] = "<<a[i]<<"\n";
   }
