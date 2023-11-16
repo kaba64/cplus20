@@ -32,6 +32,6 @@ auto main(void) -> int
   std::cout<<"Unsorted vector is : "<<std::endl;
   Display(unsorted);
   std::cout<<"Sorting the vector is desceding order: "<<std::endl;
-  sort(unsorted.begin(),unsorted.end(),[](int num1, int num2){return (num2<num1);});
+  std::sort(unsorted.begin(),unsorted.end(),[](int num1, int num2){return (num2<num1);});
   Display(unsorted);
 }
