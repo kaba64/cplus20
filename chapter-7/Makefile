@@ -1,7 +1,7 @@
 CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := pass_by_reference.cpp
+SRCS := Lambda.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
