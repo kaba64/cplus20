@@ -8,7 +8,7 @@ auto main() -> int
   std::string* names = new std::string[number];
   double* ages = new double[number];
 
-  std::cout<<"Please enter the name and age for 4 person : \n";
+  std::cout<<"Please enter the name and age for 2 people : \n";
   for(int i=0;i<number;++i){
     std::cin>>names[i]>>ages[i];
   }
