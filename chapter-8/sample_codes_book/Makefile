@@ -1,7 +1,7 @@
 CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := new-delete-pointer.cpp
+SRCS := dangling_pointer.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
