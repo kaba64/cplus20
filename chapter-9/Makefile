@@ -1,7 +1,7 @@
-CC := g++ -std=c++2a -Wall
+CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := declare-friend.cpp
+SRCS := destructor-pointer.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 

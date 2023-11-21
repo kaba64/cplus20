@@ -4,7 +4,7 @@
 class Human{
 public:
   Human(std::string f = "",std::string l = "", int agein = 37)
-    :first{f}, last{l}, age{agein} {}
+    :first(f), last(l), age(agein) {}
   std::string get_full_name(){return first+" "+last;}
   int get_age(){return age;}
   ~Human(){std::cout<<"Destructor executed!"<<"\n";};
