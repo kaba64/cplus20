@@ -1,7 +1,7 @@
 CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := destructor-pointer.cpp
+SRCS := singleton.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 

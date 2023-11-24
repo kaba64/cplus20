@@ -3,7 +3,7 @@
 
 class Store{
 public:
-  explicit Store(unsigned int n)
+  Store(unsigned int n)
     :numbers(n)
   {
     ptri = new int[n];
@@ -20,6 +20,7 @@ public:
     std::copy(copydata.ptri,copydata.ptri+numbers,ptri);
   }
   Store(Store&& movesourse){
+    std::cout<<"Move constructor"<<"\n";
     if(movesourse.getpointer() !=NULL){
       ptri = movesourse.getpointer();
       movesourse.SetPointer(NULL);
@@ -29,7 +30,7 @@ public:
     for(unsigned int i=0;i<numbers;++i){std::cout<<i<<"\n";}
   }
   void SetValue(int x, unsigned int index){ptri[index]=x;}
-  void SetPointer(int* ptriin){ptriin=NULL;}
+  void SetPointer(int* ptriin){ptri=ptriin;}
   unsigned int getnumber() const{return numbers;}
   int* getpointer() const{return ptri;}
   ~Store()
@@ -47,6 +48,7 @@ Store Copy(Store& source);
 auto main() -> int
 {
   Store Intnumbers{10};
+  printdata(Intnumbers);
   Store Intnumbers2(Copy(Intnumbers));
 }
 
