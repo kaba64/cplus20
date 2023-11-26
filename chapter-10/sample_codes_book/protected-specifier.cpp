@@ -43,4 +43,7 @@ auto main() -> int
   std::cout<<"Dinder: ";
   mydinner.Swim();
   //mylunch.IsFreshWaterFish=true;
+
+  /*Uncommenting the above lne of code will generate compile error
+   since the attribute IsFreshWaterFish is protected.*/
 }
