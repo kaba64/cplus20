@@ -1,7 +1,7 @@
 CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := singleton.cpp
+SRCS := main.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
