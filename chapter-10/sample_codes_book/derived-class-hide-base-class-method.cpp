@@ -22,7 +22,7 @@ public:
     if(IsFreshWaterFish)
       std::cout<<name<<" usually swims in lake"<<"\n";
     else
-      std::cout<<name<<" usually Swim in sea"<<"\n";
+      std::cout<<name<<" usually swim in sea"<<"\n";
   }
 };
 
@@ -53,7 +53,8 @@ auto main() -> int
   std::cout<<"About my today food : "<<"\n";
   std::cout<<"Lunch: ";
   mylunch.Swim();
-  //mylunch.Swim("Carp"); /* It will produce error since Crap::Swim() will hide both of the methods from the compiler. */
+  //mylunch.Swim("Carp");
+  /* It will produce error since Crap::Swim() will hide both of the methods from the compiler. */
   mylunch.Fish::Swim("Carp");
   std::cout<<"Dinder: ";
   mydinner.Swim();

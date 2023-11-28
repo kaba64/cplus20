@@ -1,7 +1,7 @@
 CC := g++ -std=c++20
 TARGET_EXEC := out
 CFLAGS  := -Wall
-SRCS := protected-specifier.cpp
+SRCS := private-inheritance.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 

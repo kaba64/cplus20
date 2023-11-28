@@ -1,3 +1,4 @@
+/*Example: listing 10.8 of the book page 298*/
 #include <iostream>
 
 class Motor
@@ -21,7 +22,9 @@ public:
 
 auto main() -> int
 {
-  Car mycar;
-  //mycar.Move();
-  mycar.PumpFuel();
+  Car myCar, theirCar;
+  myCar.Move();
+  /*This will generate compilton error due
+    to the private inheritance from the bse class*/
+  //theirCar.PumpFuel();
 }
