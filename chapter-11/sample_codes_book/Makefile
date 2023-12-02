@@ -1,6 +1,5 @@
-CC := g++ -std=c++2a -Wall
+CC := g++ -std=c++20 -O2 -Wall
 TARGET_EXEC := out
-CFLAGS  := -Wall
 SRCS := specifier-override.cpp
 OBJS=$(SRCS:.cpp=.o)
 
