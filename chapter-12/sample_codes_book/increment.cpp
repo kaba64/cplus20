@@ -5,7 +5,7 @@ private:
   int day, month, year;
 public:
   Date(int monthin,int dayin,int yearin)
-  :month(monthin),day(dayin),year(yearin)
+    :day(dayin),month(monthin),year(yearin)
   {
   
   }
