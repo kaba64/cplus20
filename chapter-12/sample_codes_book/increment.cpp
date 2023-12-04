@@ -1,3 +1,4 @@
+#include <ctime>
 #include <iostream>
 
 class Date{
@@ -58,6 +59,27 @@ public:
     }
     return *this;
   }
+  Date operator --(int) //post decrement 
+  {
+    Date copy(day,month,year);
+    if(month == 1 && day==1){
+      --year;
+      month=12;
+      day=31;
+    }else if(month==3 && day==1){
+      --month;
+      day=28;
+    }else if((month==5 || month==7 || month==10 || month==12) && day==1){
+      --month;
+      day=30;
+    }else if(day==1){
+      --month;
+      day=31;
+    }else{
+      --day;
+    }
+    return copy;
+  }
   void DisplayDate(){
     std::cout<<month<<"/"<<day<<"/"<<year<<"\n";
   }
@@ -65,30 +87,33 @@ public:
 
 auto main() -> int
 {
-  Date today(8,28,2022);
+  // get today's date
+  time_t t = time(0);   // get time now
+  struct tm * today_d = localtime( & t );
+  
+  Date today(today_d->tm_mon,today_d->tm_mday,today_d->tm_year+1900); /* input formate : m/d/y*/
   today.DisplayDate();
-  ++today;
-  today.DisplayDate();
+  (++today).DisplayDate();
+
   Date lastdayofyear(12,31,2022);
   lastdayofyear.DisplayDate();
-  ++lastdayofyear;
-  lastdayofyear.DisplayDate();
+  (++lastdayofyear).DisplayDate();
+
   Date oneday(6,30,2022);
   oneday.DisplayDate();
-  ++oneday;
-  oneday.DisplayDate();
+  (++oneday).DisplayDate();
+
   Date firstdayofyear(1,1,2022);
   firstdayofyear.DisplayDate();
-  --firstdayofyear;
-  firstdayofyear.DisplayDate();
+  (--firstdayofyear).DisplayDate();
+
   Date aday(4,30,2022);
   aday.DisplayDate();
-  --aday;
-  aday.DisplayDate();
+  (--aday).DisplayDate();
+
   std::cout<<"Post increment : \n";
   Date postincrement(8,28,2022);
-  postincrement.DisplayDate();
-  postincrement ++;
+  postincrement++.DisplayDate();
   postincrement.DisplayDate();
 }
 

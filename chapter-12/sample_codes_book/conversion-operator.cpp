@@ -1,13 +1,17 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <ctime>
+
+using namespace std;
+
 class Date{
 private:
   int day, month, year;
   std::string dateInstring;
 public:
   Date(int monthin,int dayin,int yearin)
-  :month(monthin),day(dayin),year(yearin)
+    :day(dayin),month(monthin),year(yearin)
   {
   
   }
@@ -60,31 +64,46 @@ public:
     }
     return *this;
   }
-  /*Concersion operator*/
+  /*Conversion operator*/
   explicit operator const char*()
   {
     std::ostringstream formattedDate;
     formattedDate<<month<<"/"<<day<<"/"<<year;
     dateInstring = formattedDate.str();
-    return dateInstring.c_str();
+   /*The basic_string::c_str() returns a pointer to an array that contains a 
+      null-terminated sequence of characters representing the current value of 
+      the basic_string object. */
+   return dateInstring.c_str();
   }
   explicit operator int()
   {
     return day+month+year;
   }
-  /*End concersion operator*/
+  friend ostream & operator << (ostream &out, const Date &date_in);
+  /*End conversion operator*/
   void DisplayDate(){
     std::cout<<month<<"/"<<day<<"/"<<year<<"\n";
   }
 };
 
+ostream & operator << (ostream &out, const Date &date_in){
+  out <<date_in.month<<"/"<<date_in.day<<"/"<<date_in.year;
+  return out;
+}
+
 auto main() -> int
 {
-  Date today(8,31,2022);
+  // get today's date
+  time_t t = time(0);   // get time now
+  struct tm * today_d = localtime( & t );
+  
+  Date today(today_d->tm_mon,today_d->tm_mday,today_d->tm_year+1900); /* input formate : m/d/y*/
+  /*Since keyword explicit is used, we should 
+    use cast to avoid compilation error*/
   std::string strtoday{static_cast<const char*> (today)};
   int inttoday{static_cast<int> (today)};
-  //std::cout<<"Today's date is : "<<today<<"\n";
-  std::cout<<"Today's date is : "<<strtoday<<"\n";
+  std::cout<<"Today's date (using operator overloading) is : "<<today<<"\n";
+  std::cout<<"Today's date (using conversion operator) is : "<<strtoday<<"\n";
   std::cout<<"Today's date in Int : "<<inttoday<<"\n";
 }
 
