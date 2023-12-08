@@ -1,6 +1,6 @@
 CC := g++ -std=c++20 -O2 -Wall -fmax-errors=3
 TARGET_EXEC := out
-SRCS := addition_subtraction.cpp
+SRCS := move.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
