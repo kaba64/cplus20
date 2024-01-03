@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <string>
 
 void print(const std::vector<int> &d,const std::string &name){
