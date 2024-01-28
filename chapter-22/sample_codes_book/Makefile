@@ -1,6 +1,6 @@
 CC := g++ -std=c++20 -O2 -Wall -fmax-errors=3
 TARGET_EXEC := out
-SRCS := listing_22_1.cpp
+SRCS := listing_22_3.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 
