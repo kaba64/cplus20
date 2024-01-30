@@ -32,5 +32,6 @@ int main(int argc,char *argv[]){
   std::transform(numVecInt1.begin(),numVecInt1.end(),numVecInt2.begin(),resVecInt.begin(),lambda);
   print(resVecInt,"resVecInt");
   std::cout<<"\n";
+
   return 0;
 }
