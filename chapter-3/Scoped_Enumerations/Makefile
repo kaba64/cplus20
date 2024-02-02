@@ -6,8 +6,8 @@ OBJCS = $(SRCS:.cpp=.o)
 
 $(TARGET_EXEC): $(OBJCS)
 	$(CC) $^ -o $@
-$(OBJCS): $(SRCS)
-	$(CC) -c $<
+%.o: %.cpp
+        $(CC) -c $< -o $@
 clean:
 	rm $(OBJCS) $(TARGET_EXEC) *~
 run:

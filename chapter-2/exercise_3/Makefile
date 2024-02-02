@@ -6,8 +6,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 $(TARGET_EXEC): $(OBJS)
 	$(CC) $^ -o $@ $(FLAGS)
-$(OBJS): $(SRCS)
-	$(CC) -c $<
+%.o: %.cpp
+	$(CC) -c $< -o $@
 clean:
 	rm $(OBJS) $(TARGET_EXEC) *~
 make run:
