@@ -7,7 +7,7 @@ $(TARGET_EXEC): $(OBJS)
 	$(CC) $^ -o $@
 %.o: %.cpp
 	$(CC) -c $< -o $@
-Crap_class.o: Crap_class.h
+$(OBJS): Crap_class.h
 clean:
 	rm $(OBJS) $(TARGET_EXEC) *~
 run:
