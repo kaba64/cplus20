@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include "Crap_class.h"
 
 template <typename T> class smart_ptr{
