@@ -23,12 +23,9 @@ public:
   T* operator -> ()const{return rawPtr;}
 };
 
-template <typename T> void MakeFishSwim(smart_ptr<T> inputFish){
-
-  /*When a (smart_ptr<T>* inputFish) is passed to the function use the commented one */
-  //T* fishPtr = inputFish->operator->();
-
-  (inputFish.get())->Swim(); // T has a swim() member function
+template <typename T> void MakeFishSwim(smart_ptr<T> inputFish){  
+  inputFish->Swim();
+  //(inputFish.get())->Swim(); // T has a swim() member function
 }
 
 int main(int argc,char *argv[]){
